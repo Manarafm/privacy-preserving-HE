@@ -8,19 +8,19 @@ This framework allows for decentralized Federated Learning and secure, encrypted
 
 **The 7-Component Framework**
 
-Component 1: Local Training: Decentralized model training at healthcare sites.
+1: Local Training: Decentralized model training at healthcare sites.
 
-Component 2: FL Aggregation: Federated weight combination using PHE.
+2: FL Aggregation: Federated weight combination using PHE.
 
-Component 3: Global Model Consolidation: Creating the unified clinical model.
+3: Global Model Consolidation: Creating the unified clinical model.
 
-Component 4: FHE Circuit Compilation: Converting the model into FHE circuits via Zama.
+4: FHE Circuit Compilation: Converting the model into FHE circuits via Zama.
 
-Component 5: Multi-Dimensional Evaluation: Benchmarking Accuracy, Security, and Latency.
+5: Multi-Dimensional Evaluation: Benchmarking Accuracy, Security, and Latency.
 
-Component 6: Secure Cloud Deployment : Private clinical predictions on patient data.
+6: Secure Cloud Deployment : Private clinical predictions on patient data.
 
-Component 7: Encrypted Prediction and Local Decryption: Secure return of diagnosis to the end-user.
+7: Encrypted Prediction and Local Decryption: Secure return of diagnosis to the end-user.
 
 ### Development
 
