@@ -49,11 +49,11 @@ jupyter nbconvert --to notebook --execute Pima_Diabetes_FHE.ipynb --output Pima_
 Technical Foundation
 This framework utilizes the TFHE (Threshold Fully Homomorphic Encryption) scheme. Unlike legacy Order-Preserving Encryption (OPE), our use of Zama’s Programmable Bootstrapping ensures that the model structure and patient data remain mathematically private throughout the entire inference process.
 
-See [DEVELOPMENT.md] (./DEVELOPMENT.md) for detailed hardware requirements.
+See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed hardware requirements.
 
 ### Security
 
-See [CONTRIBUTING.md] (./CONTRIBUTING.md)for more information on security disclosures and clinical data handling.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on security disclosures and clinical data handling.
 
 ### License
 
