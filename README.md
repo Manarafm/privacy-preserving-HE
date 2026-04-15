@@ -1,6 +1,6 @@
 
 
-# FHE-PHML: A Multi-Dimensional Framework for Privacy-Preserving Health Machine Learning Description
+## FHE-PHML: A Multi-Dimensional Framework for Privacy-Preserving Health Machine Learning Description
 
 This repository is the official implementation of the FHE-PHML framework, a 7-component architecture designed to secure medical machine learning workflows. While previous works (like the NeurIPS 2020 XGBoost prototype) relied on property-preserving or partially homomorphic encryption, FHE-PHML leverages Fully Homomorphic Encryption (FHE) via Zama Concrete ML.
 
@@ -22,7 +22,8 @@ Component 6: Secure Cloud Deployment : Private clinical predictions on patient d
 
 Component 7: Encrypted Prediction and Local Decryption: Secure return of diagnosis to the end-user.
 
-# Development
+### Development
+
 This package requires Python 3.12.12,. It is built on top of the Zama Concrete ML library, which requires the Rust compiler for FHE circuit compilation.
 
 1. Install the core framework:
@@ -48,10 +49,12 @@ jupyter nbconvert --to notebook --execute Pima_Diabetes_FHE.ipynb --output Pima_
 Technical Foundation
 This framework utilizes the TFHE (Threshold Fully Homomorphic Encryption) scheme. Unlike legacy Order-Preserving Encryption (OPE), our use of Zama’s Programmable Bootstrapping ensures that the model structure and patient data remain mathematically private throughout the entire inference process.
 
-See DEVELOPMENT.md for detailed hardware requirements.
+See [DEVELOPMENT.md] (./DEVELOPMENT.md)for detailed hardware requirements.
 
-# Security
-See CONTRIBUTING.md for more information on security disclosures and clinical data handling.
+### Security
 
-# License
+See [CONTRIBUTING.md] (./CONTRIBUTING.md)for more information on security disclosures and clinical data handling.
+
+### License
+
 This project is licensed under the Apache-2.0 License.
