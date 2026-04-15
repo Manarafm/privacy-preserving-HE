@@ -205,3 +205,26 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ==========================================
+# FHE-PHML Research Specifics
+# ==========================================
+
+# 1. Zama Concrete ML / TFHE artifacts
+# These are the compiled "gates" and keys. They are huge and not needed on GitHub.
+.fhe_compilation/
+concrete_ml_tmp/
+*.fhe
+fhe_keys/
+
+# 2. Medical Model Weights (Privacy)
+# We share the code, but NOT the serialized hospital weights (.pkl, .joblib)
+# to ensure no patient data leaks from the model state.
+*.pkl
+*.joblib
+*.save
+src/weights_*.pkl
+
+# 3. Raw Data Security
+# Ignore raw clinical CSVs to ensure we only share the "Processed" versions
+data/raw/
