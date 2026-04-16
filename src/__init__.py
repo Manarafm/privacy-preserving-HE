@@ -1,3 +1,3 @@
 # Copyright (c) 2024 Manar Alnasser / Cardiff University.
-# Licensed under the Apache-2.0  License.
+# SPDX-License-Identifier: Apache-2.0
 # Part of the FHE-PHML PhD Research Framework.
