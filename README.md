@@ -1,6 +1,5 @@
 
-
-## FHE-PHML: A Multi-Dimensional Framework for Privacy-Preserving Health Machine Learning Description
+### DESCRIPTION
 
 This repository is the official implementation of the FHE-PHML framework, a 7-component architecture designed to secure medical machine learning workflows. While previous works relied on property-preserving or partially homomorphic encryption, FHE-PHML leverages Fully Homomorphic Encryption (FHE) via Zama Concrete ML.
 
@@ -22,39 +21,70 @@ This framework allows for decentralized Federated Learning and secure, encrypted
 
 7: Encrypted Prediction and Local Decryption: Secure return of diagnosis to the end-user.
 
-### Development
+### DEVELOPMENT
 
-This package requires Python 3.12.12,. It is built on top of the Zama Concrete ML library, which requires the Rust compiler for FHE circuit compilation.
+This package requires **Python 3.12.x**. It is built on top of the **Zama Concrete ML** library, which utilizes the Rust compiler for FHE circuit compilation.
 
-1. Install the core framework:
+**Environment Setup**
 
-Bash
-python -m pip install .
-Note: This installs all core dependencies including concrete-ml, scikit-learn, and phe in the required order.
+Due to specific version requirements for FHE compatibility, we recommend a clean virtual environment:
 
-2. Run the Benchmarks (Component 5):
-To verify the accuracy of the FHE circuits against plaintext models:
+```bash
+# Install specific scikit-learn version first
+pip install scikit-learn==1.5.0
 
-Bash
-cd tests
-python -m pytest
-3. Run the Clinical Examples:
-Install additional visualization tools and run the Pima or Heart Disease notebooks:
+# Install the framework and dependencies**
+pip install -r requirements.txt
+```
 
-Bash
-python -m pip install .[examples]
-cd examples
-#Execute a specific experiment via CLI or open in Jupyter
-jupyter nbconvert --to notebook --execute Pima_Diabetes_FHE.ipynb --output Pima_Diabetes_FHE.ipynb
-Technical Foundation
-This framework utilizes the TFHE (Threshold Fully Homomorphic Encryption) scheme. Unlike legacy Order-Preserving Encryption (OPE), our use of Zama’s Programmable Bootstrapping ensures that the model structure and patient data remain mathematically private throughout the entire inference process.
+**Usage**
 
-See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed hardware requirements.
+Run the Clinical Framework 
+Execute the core pipeline (Federated training to FHE transition):
 
-### Security
+```Bash
+python main.py
+```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on security disclosures and clinical data handling.
+Run Research Benchmarks 
+To reproduce the efficiency and privacy results presented in the paper.
 
-### License
+```Bash
+
+Benchmark 1: Efficiency (CPU, RAM, Energy, Latency)
+
+python experiments/benchmarking_efficiency.py
+
+Benchmark 2: Privacy (Membership Inference Attack Analysis)
+
+python experiments/privacy_attack_mia.py
+
+```
+
+**Technical Foundation**
+
+FHE-PHML utilizes the TFHE (Threshold Fully Homomorphic Encryption) scheme. Unlike legacy Order-Preserving Encryption (OPE) or Partially Homomorphic Encryption (PHE) used in isolation, our framework utilizes Zama’s Programmable Bootstrapping.
+
+- Mathematical Privacy: Model parameters and patient inputs remain encrypted throughout the entire inference process.
+
+- Non-Linearity: Allows for secure execution of non-linear activation functions (like the Logistic sigmoid) in the encrypted domain.
+
+- Quantization: Uses 8-bit quantization to balance cryptographic security with predictive accuracy.
+
+See [DEVELOPMENT](DEVELOPMENT.md) for detailed hardware specifications.
+
+### SECURITY
+
+See [CONTRIBUTING](CONTRIBUTING.md) for more information.
+
+### LICENSE
 
 This project is licensed under the Apache-2.0 License.
+
+### ATTRIBUTION & RESEARCH STATUS
+This framework is the primary output of ongoing PhD research at **Cardiff University**. 
+
+While this work is currently an **unpublished manuscript**, the authors kindly request that any use of this code, the 7-component architecture, or the benchmarking methodology be formally attributed to:
+> **Alnasser, M., & Li, S. (2026). FHE-PHML Framework, Cardiff University.**
+
+For inquiries regarding the full manuscript or collaboration, please contact the repository owner.
